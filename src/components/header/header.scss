@@ -1,0 +1,42 @@
+@import "../../styles/main.scss";
+
+.header-container {
+  display: flex;
+  align-items: center;
+  box-shadow: 1px 1px 4px 1px rgba(255, 255, 255, 0.5);
+  // box-shadow: 1px 1px 4px 1px rgba(255, 255, 255, 0.5);
+  // box-shadow: 1px 1px 4px 1px #1677ff;
+  z-index: 10;
+  background-color: #e7e7e7;
+}
+
+.header-box {
+  @include centerWithValue(space-between, center, 100%, 100%);
+  margin: 0 auto;
+  a .logo {
+    @include flex();
+    color: $blue;
+    // background: $white;
+    font-weight: 700;
+    font-size: 22px;
+    margin: 10px;
+    border-radius: 8px;
+    height: 43px;
+    padding: 0px 10px;
+  }
+  .right-section {
+    @include flex();
+    gap: 10px;
+    .popover {
+      cursor: pointer;
+    }
+  }
+}
+
+.cart {
+  @include flex();
+  cursor: pointer;
+  h3{
+    margin-left: 10px;
+  }
+}

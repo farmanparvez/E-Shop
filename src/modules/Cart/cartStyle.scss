@@ -1,0 +1,61 @@
+@import "../../styles/main.scss";
+
+.cart-wrapper {
+  background: $bg;
+  height: calc(100vh - 64px);
+  padding: 30px;
+  .cart-container {
+    // @include flexWithValue(space-between, center);
+    // width: 95%;
+    // flex-direction: column;
+    margin: 0 auto;
+    .left-box {
+      width: 80%;
+      margin: 0 auto;
+      h1 {
+        font-weight: 400;
+      }
+    }
+    .no-items {
+      background-color: $yellow;
+      padding: 10px;
+      font-size: 20px;
+      margin-top: 20px;
+      width: 100%;
+    }
+    .itemBox{
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .cartItems {
+      @include flexWithValue(start, end);
+      gap: 20px;
+      .img-box {
+        max-width: 150px;
+        max-height: 150px;
+        img {
+          max-width: 150px;
+          max-height: 150px;
+        }
+      }
+    }
+    .total-checkout-container {
+      border: 2px solid $yellow;
+      .heading {
+        padding: 10px;
+        h1 {
+          font-weight: 500;
+          color: gray;
+        }
+      }
+      .checkout-btn {
+        @include flex();
+        margin-top: 20px;
+        border-top: 2px solid $yellow;
+        padding: 10px;
+        // margin: 10px 0;
+      }
+    }
+  }
+}

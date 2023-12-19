@@ -1,0 +1,58 @@
+@import "../styles/main.scss";
+
+.cs-layout{
+  overflow: auto;
+}
+
+.footer {
+  background-color: $bg;
+  text-align: center;
+  padding: 30px;
+  .container {
+    @include flex();
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    .copyright {
+      text-align: end;
+      font-weight: 500;
+    }
+  }
+  .row {
+    @include flexWithValue(center, start);
+    // width: 80%;
+    // margin: auto;
+    gap: 20px;
+    .store-container {
+      @include flex();
+      flex-direction: column;
+    }
+    .img-box {
+      // @include centerWithValue(center, center, 200px, 100%);
+      @include flex();
+      max-width: 200px;
+      // max-height: 200px;
+      gap: 10px;
+      img {
+        max-width: 60%;
+        max-height: 100%;
+      }
+    }
+    h2 {
+      text-wrap: nowrap;
+    }
+    p {
+      font-weight: 500;
+      margin: 10px 0 !important;
+    }
+    ul {
+      list-style: none;
+      padding: 0 !important;
+      margin: 10px 0 !important;
+    }
+    ul li {
+      text-wrap: nowrap;
+      font-weight: 500;
+    }
+  }
+}

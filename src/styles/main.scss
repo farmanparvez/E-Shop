@@ -1,0 +1,24 @@
+@import "./helpers/mixins";
+@import "./helpers/varaible";
+@import "./helpers/classes";
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: $white;
+  // color: $black;
+  // overflow-y: hidden;
+
+  scroll-behavior: smooth;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    // color: $black;
+    margin: 0;
+  }
+}

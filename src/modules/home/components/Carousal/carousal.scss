@@ -1,0 +1,73 @@
+@import "../../../../styles/main.scss";
+
+.carousel-container {
+  background: #e7e7e7;
+  display: flex;
+  flex-direction: column;
+  .content-box {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    flex-direction: column;
+    // padding: 130px 0 130px 130px;
+    flex-grow: 1;
+    // min-width: 450px;
+    min-height: 300px;
+    // height: 100%;
+    max-height: 500px;
+    .content {
+      @include flexWithValue(center, flex-start);
+      flex-direction: column;
+      width: 80%;
+      margin: auto;
+    }
+    h1 {
+      font-weight: bold;
+      margin: 0;
+    }
+    button {
+      width: 300px;
+      height: 40px;
+      margin: 10px 0;
+    }
+  }
+  .image-container {
+    flex-basis: 50%;
+    @include flex;
+    // background: #555;
+    flex-grow: 1;
+    padding: 30px;
+    max-height: 500px;
+    .cur-img {
+      margin: auto auto;
+      border-radius: 2%;
+      // height: 90%;
+      // width: 85%;
+      max-width: 100%;
+      max-height: 100%;
+    }
+    // }
+  }
+}
+
+.size {
+  position: relative;
+  background-color: whitesmoke;
+  min-height: 500px;
+}
+
+.center-by-postion {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.contentStyle {
+  min-height: 500px;
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}

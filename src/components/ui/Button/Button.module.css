@@ -1,0 +1,35 @@
+/* Button.module.css */
+.button {
+  border: none;
+  padding: 8px 20px;
+  font-size: 16px;
+  border-radius: 3px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.standard {
+  background-color: #4caf50;
+}
+
+.button:disabled {
+  cursor: not-allowed !important;
+  background: gray;
+  color: #00000073;
+}
+
+.blue {
+  background-color: #333652;
+  color: #fff;
+}
+
+.yellow {
+  background-color: #fad02c;
+  color: #000;
+}
+
+.white {
+  background-color: transparent;
+  color: black;
+  border: 1px solid #fad02c;
+}

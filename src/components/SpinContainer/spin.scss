@@ -1,0 +1,10 @@
+@import "../../styles/main.scss";
+
+.empty-container{
+    @include flex;
+    min-height: 550px;
+    width: 90%;
+    margin: 0 auto;
+    box-shadow: -2px 3px 14px -10px rgba(0,0,0,0.59);
+
+}

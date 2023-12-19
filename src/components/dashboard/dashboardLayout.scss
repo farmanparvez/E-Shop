@@ -1,0 +1,39 @@
+@import "../../styles/main.scss";
+
+.logoContainer {
+  @include flex();
+  height: 50px;
+  background-color: whitesmoke;
+  margin: 20px 10px;
+  border-radius: 5px;
+  .logo {
+    @include centerWithValue(center, center, 80%, 40px);
+    padding: 10px;
+    // border-radius: 100%;
+    border-radius: 10px;
+    background-color: $blue;
+    color: $white;
+    
+  }
+}
+.layoutWrapper {
+  // height: calc(100vh - 150px);
+  height: calc(100vh - 64px);
+  width: 100vw;
+}
+.suspence-spin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.contentWrapper {
+  padding: 18px 18px 0 18px;
+  background: #fff;
+  // height: calc(100vh - 64px);
+  overflow-y: auto;
+  margin: 20px 16px 0;
+}
+.sidebar-cs {
+  background: #001529 !important;
+}
