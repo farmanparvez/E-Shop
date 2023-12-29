@@ -1,29 +1,27 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getOrderDetails, payOrder, getUserOrder, getOrders, updateOrderToDelivered } from "../actions/orderAction";
+import { getOrderDetails, payOrder, getUserOrder, getAdminOrders, updateOrderToDelivered } from "../actions/orderAction";
 
 const orderSlice = createSlice({
   name: "order",
   initialState: {
     isLoading: true,
+    userOrders: [],
+    orderDetails: [],
+    adminOrders: [],
 
 
-    isSuccess: false,
-    isError: false,
-    isMessage: null,
-    order: [],
-    loadingOrders: true,
-    orders: null,
-    profileSuccess: false,
-    allOrders: [],
-    stateUpdated: false
+    // isSuccess: false,
+    // isError: false,
+    // isMessage: null,
+    // loadingOrders: true,
+    // profileSuccess: false,
+    // // allOrders: [],
+    // stateUpdated: false
   },
   reducers: {
-    reset: (state, action) => {
+    reset: (state) => {
       state.isLoading = false;
-      state.isSuccess = false;
       state.isError = false;
-      state.isMessage = null;
-      state.userInfo = null
     },
   },
   extraReducers: (builder) => {
@@ -33,7 +31,7 @@ const orderSlice = createSlice({
       })
       .addCase(getOrderDetails.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.order = action.payload.order;
+        state.orderDetails = action.payload.order;
       })
       .addCase(getOrderDetails.rejected, (state, action) => {
         state.isLoading = false;
@@ -54,22 +52,22 @@ const orderSlice = createSlice({
       })
       .addCase(getUserOrder.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.orders = action.payload.orders;
+        state.userOrders = action.payload.orders;
       })
       .addCase(getUserOrder.rejected, (state, action) => {
         state.isLoading = false;
-        state.isError = true;
       })
 
       // admin----------------------------------------------------------------------------------------->
-      .addCase(getOrders.pending, (state, action) => {
+      .addCase(getAdminOrders.pending, (state, action) => {
         state.isLoading = true;
       })
-      .addCase(getOrders.fulfilled, (state, action) => {
+      .addCase(getAdminOrders.fulfilled, (state, action) => {
+        console.log(action.payload)
         state.isLoading = false;
-        state.allOrders = action.payload.orders;
+        state.adminOrders = action.payload.orders;
       })
-      .addCase(getOrders.rejected, (state) => {
+      .addCase(getAdminOrders.rejected, (state) => {
         state.isLoading = false;
         state.isError = true;
       })
@@ -81,7 +79,6 @@ const orderSlice = createSlice({
       })
       .addCase(updateOrderToDelivered.rejected, (state) => {
         state.isLoading = false;
-        state.isError = true;
       })
   },
 });

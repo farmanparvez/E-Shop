@@ -12,7 +12,7 @@ const CsModal = (props) => {
             title={
                 isVisible.type === 'view' && "Details"
             }
-            visible={isVisible.visible}
+            open={isVisible.visible}
             onCancel={() => dispatch(setModalVisible({ type: "", visible: false }))}
             footer={false}
             style={{ top: "10px" }}

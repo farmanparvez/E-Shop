@@ -10,13 +10,10 @@ import {
   placeOrderAPI,
   productReviewsAPI,
   topRatingProductsAPI,
-  // <------cart------>"
-  getCartItemsAPI,
-  adCartItemAPI
 } from "../../service/productAPI";
 import { notificationHandler } from "../reducers/globalSlice";
-import { CARTITEMS } from "../../utils/enviroment";
-import { setCartItem } from "../reducers/productReducer";
+// import { CARTITEMS } from "../../utils/enviroment";
+// import { setCartItem } from "../reducers/productReducer";
 
 export const topratingproducts = createAsyncThunk(
   "product/topratingproducts",
@@ -75,24 +72,24 @@ export const productReviews = createAsyncThunk(
 );
 
 
-export const addCartItem = createAsyncThunk(
-  "addCartItem/addCartItemInLocalStorege",
-  async (val, thunkAPI) => {
-    // thunkAPI.dispatch(setCartItem(false))
-    const existItem =
-      localStorage.getItem(CARTITEMS)?.length > 0 &&
-      JSON.parse(localStorage.getItem(CARTITEMS)).find(
-        (x) => x._id === val._id && x.user === val.user
-      );
-    if (existItem) return;
-    const oldCartItems = localStorage.getItem(CARTITEMS)
-      ? JSON.parse(localStorage.getItem(CARTITEMS))
-      : [];
-    const data = [...oldCartItems, val];
-    localStorage.setItem(CARTITEMS, JSON.stringify(data));
-    thunkAPI.dispatch(setCartItem(true))
-  }
-);
+// export const addCartItem = createAsyncThunk(
+//   "addCartItem/addCartItemInLocalStorege",
+//   async (val, thunkAPI) => {
+//     // thunkAPI.dispatch(setCartItem(false))
+//     const existItem =
+//       localStorage.getItem(CARTITEMS)?.length > 0 &&
+//       JSON.parse(localStorage.getItem(CARTITEMS)).find(
+//         (x) => x._id === val._id && x.user === val.user
+//       );
+//     if (existItem) return;
+//     const oldCartItems = localStorage.getItem(CARTITEMS)
+//       ? JSON.parse(localStorage.getItem(CARTITEMS))
+//       : [];
+//     const data = [...oldCartItems, val];
+//     localStorage.setItem(CARTITEMS, JSON.stringify(data));
+//     // thunkAPI.dispatch(setCartItem(true))
+//   }
+// );
 
 export const removeFromCart = createAsyncThunk(
   "removeFromCart/removeFromCartLocalStorege",
@@ -126,34 +123,6 @@ export const createOrder = createAsyncThunk(
   }
 );
 
-export const getCartItems = createAsyncThunk(
-  "cart/getCartItem",
-  async (data, thunkAPI) => {
-    try {
-      const res = await getCartItemsAPI(data);
-      return res;
-    } catch (error) {
-      const message = error?.response?.data?.message || error?.message || error?.toString();
-      thunkAPI.dispatch(notificationHandler({ type: 'error', message }));
-      return thunkAPI.rejectWithValue(message);
-    }
-  }
-);
-
-export const addCartItems = createAsyncThunk(
-  "cart/addCartItem",
-  async (data, thunkAPI) => {
-    try {
-      const res = await adCartItemAPI(data);
-      thunkAPI.dispatch(getCartItems())
-      return res;
-    } catch (error) {
-      const message = error?.response?.data?.message || error?.message || error?.toString();
-      thunkAPI.dispatch(notificationHandler({ type: 'error', message }));
-      return thunkAPI.rejectWithValue(message);
-    }
-  }
-);
 
 // admin--------------------------------------------------------------------------------------------------------------->
 export const getAdminProductProductByID = createAsyncThunk(

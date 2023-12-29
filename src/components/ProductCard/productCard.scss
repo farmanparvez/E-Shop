@@ -6,7 +6,7 @@
   height: 350px;
   // background-color: #e7e7e7;
   color: #000;
-  padding: 10px;
+  padding: 15px;
   border-radius: 5px;
   cursor: pointer;
   .img-wrapper {
@@ -14,8 +14,12 @@
     height: 80%;
     @include flex();
     background-color: #e7e7e7;
-
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px,
+      rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
+      rgba(0, 0, 0, 0.07) 0px 16px 16px;
   }
+
   .image-box {
     display: flex;
     justify-content: center;
@@ -31,7 +35,7 @@
   .details-box {
     // @include flex();
     // flex-direction: column;
-    padding-top: 5px;
+    padding-top: 12px;
   }
   // .ant-card-bordered {
   //   // border-radius: 10px;

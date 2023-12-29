@@ -43,8 +43,8 @@ const Menu = () => {
     {
       icon: <CreditCardOutlined />,
       name: "order",
-      link: "/order",
-      id: "/order",
+      link: "/admin/order",
+      id: "/admin/order",
       roles: ['3497'],
     },
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getProductByID, addCartItems } from "../../redux/actions/productAction";
+import { getProductByID } from "../../redux/actions/productAction";
 import { USERDETAILS, baseURL } from "../../utils/enviroment";
 import { useParams, Link } from "react-router-dom";
 import { Rate, Spin, Result, Select } from "antd";
@@ -10,6 +10,7 @@ import ReviewSection from "./sections/ReviewSection";
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import "./productdetails.scss";
 import { notificationHandler } from "../../redux/reducers/globalSlice";
+import { addCartItems } from "../../redux/actions/cartActions";
 
 const ProductScreen = () => {
     const props = useSelector((state) => state.product);

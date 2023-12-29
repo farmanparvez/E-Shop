@@ -6,15 +6,15 @@ import { Popover, Avatar, Badge } from 'antd';
 import { UserOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 import { Button } from '../ui';
 import { useSelector, useDispatch } from 'react-redux';
-import { getCartItems } from '../../redux/actions/productAction';
-import { setCartItem } from '../../redux/reducers/productReducer';
+import { getCartItems } from '../../redux/actions/cartActions';
+import { setCartItem } from '../../redux/reducers/cartSlice';
 import "./header.scss"
 const { Header } = Layout;
 
 const Navber = () => {
     const navigate = useNavigate()
     const location = useLocation()
-    const { cartItems } = useSelector(({ product }) => product)
+    const { cartItems } = useSelector(({ cart }) => cart)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -32,7 +32,7 @@ const Navber = () => {
         <Fragment>
             {localStorage.getItem(USERDETAILS) ?
                 <Popover className='popover'
-                    content={<Button type='primary' onClick={logout}> Logout</Button>}
+                    content={<Button color='yellow' onClick={logout}> Logout</Button>}
                 >
                     <Link to='/profile'>
                         <Avatar size={40} icon={<UserOutlined />} />
@@ -66,7 +66,7 @@ const Navber = () => {
             <div className='header-box'>
                 <Link to="/">
                     <div className='logo'>
-                        TechToner
+                        E-Shop
                     </div>
                 </Link>
                 <div className='right-section'>

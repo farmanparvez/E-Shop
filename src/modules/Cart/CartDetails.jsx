@@ -2,10 +2,15 @@ import { useSelector } from "react-redux"
 import { baseURL } from "../../utils/enviroment"
 import { Button } from "../../components/ui"
 import { Select } from "antd"
+import Modal from "./Modal/Modal"
+import { setModalVisible } from "../../redux/reducers/cartSlice"
+import { useDispatch } from "react-redux"
 const { Option } = Select
 
 const Cart = () => {
-    const { cartItems } = useSelector(({ product }) => product)
+    const props = useSelector(({ cart }) => cart)
+    const dispatch = useDispatch()
+    const { cartItems, isVisible } = props
     console.log(cartItems)
 
     return (
@@ -38,11 +43,11 @@ const Cart = () => {
                         )}
                         <div className="total-checkout-container">
                             <div className="heading">
-                                <h1>Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)} )items</h1>
-                                <h3>{cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)}</h3>
+                                <h1>Subtotal ({cartItems.reduce((acc, item) => acc + item.quantity, 0)} )items</h1>
+                                <h3>{cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0).toFixed(2)}</h3>
                             </div>
                             <div className="checkout-btn">
-                                <Button color="yellow">
+                                <Button color="yellow" onClick={() => dispatch(setModalVisible({ type: 'shipping', visible: true }))}>
                                     PROCEED TO CHECKOUT
                                 </Button>
                             </div>
@@ -50,6 +55,7 @@ const Cart = () => {
                     </div>
                 </div>
             </div>
+            {isVisible?.visible && <Modal {...props} />}
         </div>
     )
 }

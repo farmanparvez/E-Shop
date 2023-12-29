@@ -5,6 +5,7 @@ import userReducer from "./redux/reducers/userReducer";
 import orderReducer from "./redux/reducers/orderReducer";
 import userProduct from "./redux/reducers/userProduct"
 import globalSlice from "./redux/reducers/globalSlice";
+import cartSlice from "./redux/reducers/cartSlice";
 
 const Store = configureStore({
     reducer: {
@@ -13,7 +14,8 @@ const Store = configureStore({
         user: userReducer,
         order: orderReducer,
         userProduct,
-        global: globalSlice
+        global: globalSlice,
+        cart: cartSlice
     }
 })
 

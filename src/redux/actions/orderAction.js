@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { getOrderDetailsAPI, payOrderAPI, getUserOrderAPI, getOrdersAPI, updateOrderToDeliveredAPI } from "../../service/orderAPI";
+import { getOrderDetailsAPI, payOrderAPI, getUserOrderAPI, getAdminOrdersAPI, updateOrderToDeliveredAPI } from "../../service/orderAPI";
 import { notificationHandler } from "../reducers/globalSlice";
 
 export const getUserOrder = createAsyncThunk("order/getUserOrder", async (data, thunkAPI) => {
@@ -26,9 +26,7 @@ export const getOrderDetails = createAsyncThunk("order/getOrderDetails", async (
 
 export const payOrder = createAsyncThunk("order/payOrder", async (data, thunkAPI) => {
     try {
-        // console.log(data)
         const res = await payOrderAPI(data)
-        // console.log(res)
         return res
     } catch (error) {
         const message = error?.response?.data?.message || error?.message || error?.toString();
@@ -38,11 +36,9 @@ export const payOrder = createAsyncThunk("order/payOrder", async (data, thunkAPI
 })
 
 // admin---------------------------------------------------------------------------------------------------------------->
-export const getOrders = createAsyncThunk("order/getOrders", async (data, thunkAPI) => {
+export const getAdminOrders = createAsyncThunk("order/getAdminOrders", async (data, thunkAPI) => {
     try {
-        // console.log(data)
-        const res = await getOrdersAPI(data)
-        // console.log(res)
+        const res = await getAdminOrdersAPI(data)
         return res
     } catch (error) {
         const message = error?.response?.data?.message || error?.message || error?.toString();
@@ -53,9 +49,8 @@ export const getOrders = createAsyncThunk("order/getOrders", async (data, thunkA
 
 export const updateOrderToDelivered = createAsyncThunk("order/updateOrderToDelivered", async (data, thunkAPI) => {
     try {
-        // console.log(data)
         const res = await updateOrderToDeliveredAPI(data)
-        thunkAPI.dispatch(getOrders())
+        thunkAPI.dispatch(getAdminOrders())
         return res
     } catch (error) {
         const message = error?.response?.data?.message || error?.message || error?.toString();

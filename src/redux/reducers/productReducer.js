@@ -10,9 +10,6 @@ import {
   createOrder,
   productReviews,
   topratingproducts,
-  // <--------------cart------------>
-  getCartItems,
-  addCartItems
 } from "../actions/productAction";
 
 const productSlice = createSlice({
@@ -65,9 +62,6 @@ const productSlice = createSlice({
     setPagination: (state, action) => {
       state.page = action.payload;
     },
-    setCartItem: (state, action) => {
-      state.cartItems = [];
-    },
   },
   extraReducers: (builder) => {
     builder
@@ -106,34 +100,13 @@ const productSlice = createSlice({
         state.isError = true;
       })
       .addCase(createOrder.pending, (state) => {
-        state.isLoading = true;
+        state.isLoadingForm = true;
       })
       .addCase(createOrder.fulfilled, (state, action) => {
-        state.isLoading = false;
+        state.isLoadingForm = false;
         state.order = action.payload.order
       })
       .addCase(createOrder.rejected, (state) => {
-        state.isLoading = false;
-        state.isError = true;
-      })
-      // .addCase(getCartItems.pending, (state) => {
-      //   state.isLoading = true;
-      // })
-      .addCase(getCartItems.fulfilled, (state, action) => {
-        // state.isLoading = false;
-        state.cartItems = action.payload.items
-      })
-      .addCase(getCartItems.rejected, (state) => {
-        state.isLoading = false;
-        // state.isError = true;
-      })
-      .addCase(addCartItems.pending, (state) => {
-        state.isLoadingForm = true;
-      })
-      .addCase(addCartItems.fulfilled, (state, action) => {
-        state.isLoadingForm = false;
-      })
-      .addCase(addCartItems.rejected, (state) => {
         state.isLoadingForm = false;
         state.isError = true;
       })
@@ -211,5 +184,5 @@ const productSlice = createSlice({
   },
 });
 
-export const { reset, setModalVisible, setDrawerVisible, savePaymentMethod, setPagination, setCartItem } = productSlice.actions;
+export const { reset, setModalVisible, setDrawerVisible, savePaymentMethod, setPagination } = productSlice.actions;
 export default productSlice.reducer;

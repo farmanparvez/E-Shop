@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../../redux/actions/authActions';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import { getCartItems } from '../../../redux/actions/productAction';
+import { getCartItems } from '../../../redux/actions/cartActions';
 import { reset } from '../../../redux/reducers/authReducer';
 
 const SignInForm = () => {
