@@ -4,7 +4,7 @@ import { Fragment, useEffect } from "react"
 import Table from "./Table/Table"
 
 
-const index = () => {
+const Index = () => {
   const props = useSelector((state) => state.product);
   const dispatch = useDispatch()
   
@@ -19,4 +19,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index

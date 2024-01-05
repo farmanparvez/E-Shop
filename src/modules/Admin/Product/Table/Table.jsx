@@ -7,7 +7,7 @@ import { Fragment } from "react";
 import CsDrawer from "../Drawer/Drawer";
 import Modal from "../Modal/Modal";
 
-const index = (props) => {
+const Index = (props) => {
     const { isLoading, isVisible, adminProductList, isDrawerVisible } = props
     const dispatch = useDispatch()
 
@@ -47,4 +47,4 @@ const index = (props) => {
     )
 }
 
-export default index
+export default Index
