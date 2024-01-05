@@ -1,17 +1,18 @@
 import { useSelector } from "react-redux"
 import { baseURL } from "../../utils/enviroment"
 import { Button } from "../../components/ui"
-import { Select } from "antd"
-import Modal from "./Modal/Modal"
-import { setModalVisible } from "../../redux/reducers/cartSlice"
+import { Select, Popconfirm } from "antd"
 import { useDispatch } from "react-redux"
+import { DeleteTwoTone, QuestionCircleOutlined } from "@ant-design/icons";
+import { deleteCartItem } from "../../redux/actions/cartActions"
+import { useNavigate } from "react-router-dom"
 const { Option } = Select
 
 const Cart = () => {
     const props = useSelector(({ cart }) => cart)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const { cartItems, isVisible } = props
-    console.log(cartItems)
 
     return (
         <div className="cart-wrapper">
@@ -25,19 +26,41 @@ const Cart = () => {
                         {cartItems?.length > 0 && cartItems?.map((res, index) =>
                             <div key={index} className="cartItems">
                                 <div className="img-box"><img src={baseURL + res?.image} alt="" /></div>
-                                <div><h3>{res?.name}</h3></div>
-                                <div><h3>${res?.price}</h3></div>
-                                <div>
-                                    <Select
-                                        defaultValue={res.quantity?.toString()}
-                                        style={{
-                                            width: 80,
-                                        }}
-                                    // onChange={handleChange}
-                                    // options={numbers?.map(res => ({ label: res, value: res }))}
-                                    >
-                                        <Option value="1"></Option>
-                                    </Select>
+                                <div className="detail-box">
+                                    <div className="product-name"><h3>{res?.name}</h3></div>
+                                    <div><h3>${res?.price}</h3></div>
+                                    <div>
+                                        <Select
+                                            defaultValue={res.quantity?.toString()}
+                                            style={{
+                                                width: 80,
+                                            }}
+                                        // onChange={handleChange}
+                                        // options={numbers?.map(res => ({ label: res, value: res }))}
+                                        >
+                                            <Option value="1"></Option>
+                                        </Select>
+                                    </div>
+                                    <div>
+                                        <Popconfirm
+                                            title="Are you sure？"
+                                            icon={
+                                                <QuestionCircleOutlined
+                                                    style={{
+                                                        color: "red",
+                                                    }}
+                                                />
+                                            }
+                                            onConfirm={() => dispatch(deleteCartItem(res._id))}
+                                            onCancel={'cancel'}
+                                            okText="Yes"
+                                            cancelText="No"
+                                        >
+                                            <Button color="yellow">
+                                                <DeleteTwoTone />
+                                            </Button>
+                                        </Popconfirm>
+                                    </div>
                                 </div>
                             </div>
                         )}
@@ -47,7 +70,7 @@ const Cart = () => {
                                 <h3>{cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0).toFixed(2)}</h3>
                             </div>
                             <div className="checkout-btn">
-                                <Button color="yellow" onClick={() => dispatch(setModalVisible({ type: 'shipping', visible: true }))}>
+                                <Button color="yellow" onClick={() => navigate('/cart/checkout')}>
                                     PROCEED TO CHECKOUT
                                 </Button>
                             </div>
@@ -55,29 +78,8 @@ const Cart = () => {
                     </div>
                 </div>
             </div>
-            {isVisible?.visible && <Modal {...props} />}
         </div>
     )
 }
 
 export default Cart
-
-{/* {cartItems?.length > 0 && cartItems?.map((res, index) =>
-                    <div key={index} className="cartItems">
-                        <div className="img-box"><img src={baseURL + res?.image} alt="" /></div>
-                        <div><h3>{res?.name}</h3></div>
-                        <div><h3>${res?.price}</h3></div>
-                        <div>
-                            <Select
-                                defaultValue={res.quantity?.toString()}
-                                style={{
-                                    width: 80,
-                                }}
-                            // onChange={handleChange}
-                            // options={numbers?.map(res => ({ label: res, value: res }))}
-                            >
-                                <Option value="1"></Option>
-                            </Select>
-                        </div>
-                    </div>
-                )} */}

@@ -24,7 +24,8 @@ const App = () => {
           <Route path='/electronics' element={<Routing.Electronics />} />
           <Route path='/product/:id' element={<Routing.ProductScreen />} />
           <Route path='/cart' element={<Routing.Cart />} />
-          <Route path='/order/:id' element={<Routing.PlaceOrder />} />
+          <Route path='/cart/checkout' element={<Routing.checkout />} />
+          <Route path='/order/:id' element={<Routing.ordersDetailAndPayment />} />
           <Route path="/" element={<ProtectRoute role={[USER, ADMIN]} />}>
             <Route path="/" element={<DashboardLayout />}>
               <Route path='/profile' element={<Routing.Profile />} />
@@ -35,7 +36,6 @@ const App = () => {
             <Route path="/" element={<DashboardLayout />}>
               <Route path='/user' element={<Routing.Users />} />
               <Route path='/product' element={<Routing.Product />} />
-              {/* <Route path='/order' element={<Routing.Order />} /> */}
               <Route path='/admin/order' element={<Routing.AdminOrder />} />
             </Route>
           </Route>

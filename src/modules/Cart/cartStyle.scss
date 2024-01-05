@@ -1,7 +1,7 @@
 @import "../../styles/main.scss";
 
 .cart-wrapper {
-  background: $bg;
+  background: $white;
   height: calc(100vh - 64px);
   padding: 30px;
   .cart-container {
@@ -13,7 +13,7 @@
       width: 80%;
       margin: 0 auto;
       h1 {
-        font-weight: 400;
+        font-weight: 500;
       }
     }
     .no-items {
@@ -23,20 +23,38 @@
       margin-top: 20px;
       width: 100%;
     }
-    .itemBox{
-      display: flex;
-      justify-content: space-between;
+    .itemBox {
+      // display: flex;
+      // justify-content: space-between;
       gap: 20px;
     }
     .cartItems {
-      @include flexWithValue(start, end);
+      @include flexWithValue(start, center);
+      // @include flexWithValue(space-evenly, center);
+
+      background-color: $bg;
+      height: 140px;
+      border-radius: 10px;
+      margin: 20px 0;
+      padding: 15px 20px;
       gap: 20px;
       .img-box {
-        max-width: 150px;
-        max-height: 150px;
+        @include flex();
+        width: 100px;
+        max-height: 130px;
+        // padding: 20px;
         img {
           max-width: 150px;
-          max-height: 150px;
+          max-height: 120px;
+        }
+      }
+      .detail-box {
+        @include flexWithValue(space-evenly, center);
+        width: 100%;
+        .product-name {
+          width: 200px;
+          word-wrap: break-word;
+          color: $black;
         }
       }
     }

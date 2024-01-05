@@ -1,14 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getCartItems, addCartItems } from "../actions/cartActions";
+import { getCartItems, addCartItems, deleteCartItem } from "../actions/cartActions";
 
 const cartSlice = createSlice({
-    name: "auth",
+    name: "cart",
     initialState: {
         isLoading: false,
         isLoadingForm: false,
         isError: false,
         cartItems: [],
         isVisible: {},
+        details: { current: 0, data: {} },
+        // details: {}
     },
     reducers: {
         setModalVisible: (state, action) => {
@@ -16,6 +18,12 @@ const cartSlice = createSlice({
         },
         setCartItem: (state, action) => {
             state.cartItems = [];
+        },
+        setCurrent: (state, action) => {
+            state.details = action.payload;
+        },
+        saveDetails: (state, action) => {
+            state.cartItems = action.payload;
         },
     },
     extraReducers: (builder) => {
@@ -41,8 +49,18 @@ const cartSlice = createSlice({
                 state.isLoadingForm = false;
                 state.isError = true;
             })
+            .addCase(deleteCartItem.pending, (state) => {
+                state.isLoadingForm = true;
+            })
+            .addCase(deleteCartItem.fulfilled, (state, action) => {
+                state.isLoadingForm = false;
+            })
+            .addCase(deleteCartItem.rejected, (state) => {
+                state.isLoadingForm = false;
+                state.isError = true;
+            })
     },
 });
 
-export const { setCartItem, setModalVisible } = cartSlice.actions;
+export const { setCartItem, setModalVisible, setCurrent, saveDetails } = cartSlice.actions;
 export default cartSlice.reducer;

@@ -9,9 +9,11 @@ import {
   QuestionCircleOutlined,
 } from "@ant-design/icons";
 import { updateOrderToDelivered } from "../../../../redux/actions/orderAction";
+import { useNavigate } from "react-router-dom";
 
 const Coloums = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { isLoadingDelivered } = useSelector((state) => state.order);
 
   const data = [
@@ -19,7 +21,7 @@ const Coloums = () => {
       title: "Delivered",
       dataIndex: "isDelivered",
       key: "isDelivered",
-      render: (text) => <span>{text ? "Success" : 'Pending'}</span>,
+      render: (text) => <span>{text ? "Success" : 'Pending'}{console.log(text)}</span>,
     },
     {
       title: "Paid",
@@ -52,26 +54,26 @@ const Coloums = () => {
       dataIndex: "totalPrice",
       key: "totalPrice",
     },
-    // {
-    //   title: "Action",
-    //   key: "action",
-    //   align: "center",
-    //   render: (_, record) => (
-    //     <Row gutter={10}>
-    //       <Col>
-    //         <Tooltip placement="top" title={"View"}>
-    //           <Button disabled={record.isDelivered}
-    //             type="primary"
-    //             onClick={() => dispatch(updateOrderToDelivered(record._id))
-    //             }
-    //           >
-    //             Delivered
-    //           </Button>
-    //         </Tooltip>
-    //       </Col>
-    //     </Row>
-    //   ),
-    // },
+    {
+      title: "Action",
+      key: "action",
+      align: "center",
+      render: (_, record) => (
+        <Row gutter={10}>
+          <Col>
+            <Tooltip placement="top" title={"View"}>
+              <Button
+                type="primary"
+                onClick={() => navigate(`/order/${record._id}`)
+                }
+              >
+                Details
+              </Button>
+            </Tooltip>
+          </Col>
+        </Row>
+      ),
+    },
   ];
 
   return data;

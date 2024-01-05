@@ -46,7 +46,7 @@ const Coloums = () => {
       key: "totalPrice",
     },
     {
-      title: "Action",
+      title: "Delivery",
       key: "action",
       // width: "400",
       align: "center",
@@ -60,7 +60,7 @@ const Coloums = () => {
                 onClick={() => dispatch(updateOrderToDelivered(record._id))
                 }
               >
-                Delivered
+                Mark as Delivered
               </Button>
             </Tooltip>
           </Col>

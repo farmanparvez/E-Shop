@@ -9,7 +9,8 @@ export const Electronics = lazy(() => import(/* webpackChunkName: "Electronics" 
 export const LatestProduct = lazy(() => import(/* webpackChunkName: "LatestProduct" */ "../modules/LatestProducts/LatestProduct"));
 export const ProductScreen = lazy(() => import(/* webpackChunkName: "LatestProduct" */ "../modules/ProductDetail/ProductScreen"));
 export const Cart = lazy(() => import(/* webpackChunkName: "Cart" */ "../modules/Cart"));
-export const PlaceOrder = lazy(() => import(/* webpackChunkName: "Cart" */ "../modules/orders/Order"));
+export const ordersDetailAndPayment = lazy(() => import(/* webpackChunkName: "Cart" */ "../modules/ordersDetailAndPayment/Order"));
+export const checkout = lazy(() => import(/* webpackChunkName: "Cart" */ "../modules/checkoutProcess/CheckoutProcess"));
 
 // profile protected routes----------------------------------------------------->
 export const Profile = lazy(() => import(/* webpackChunkName: "home" */ "../modules/dashboard/profile"));

@@ -6,7 +6,7 @@ const orderSlice = createSlice({
   initialState: {
     isLoading: true,
     userOrders: [],
-    orderDetails: [],
+    orderDetails: null,
     adminOrders: [],
 
 
