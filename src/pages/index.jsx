@@ -14,12 +14,12 @@ export const checkout = lazy(() => import(/* webpackChunkName: "Cart" */ "../mod
 
 // profile protected routes----------------------------------------------------->
 export const Profile = lazy(() => import(/* webpackChunkName: "home" */ "../modules/dashboard/profile"));
-export const userOrder = lazy(() => import(/* webpackChunkName: "home" */ "../modules/dashboard/Order"));
+export const userOrder = lazy(() => import(/* webpackChunkName: "home" */ "../modules/dashboard/Order/Index"));
 
 // admin routes----------------------------------------------------->
 export const Users = lazy(() => import(/* webpackChunkName: "home" */ "../modules/Admin/Users"));
 export const Product = lazy(() => import(/* webpackChunkName: "home" */ "../modules/Admin/Product"));
-export const AdminOrder = lazy(() => import(/* webpackChunkName: "home" */ "../modules/Admin/AdminOrder"));
+export const AdminOrder = lazy(() => import(/* webpackChunkName: "home" */ "../modules/Admin/AdminOrder/Index"));
 
 // other routes---------------------------------------------------->
 export const NotFound = lazy(() => import(/* webpackChunkName: "home" */ "../modules/notFound/NotFound"));

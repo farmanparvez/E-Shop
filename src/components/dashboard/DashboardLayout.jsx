@@ -24,7 +24,7 @@ const DashboardLayout = () => {
             >
                 <div className="logoContainer" >
                     <div className="logo" >
-                        {user ? user?.username : UN}
+                        {user ? user?.username : 'UN'}
                     </div>
                 </div>
                 <hr />

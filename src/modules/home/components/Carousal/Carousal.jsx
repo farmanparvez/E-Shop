@@ -33,9 +33,9 @@ const Carousal = () => {
       {!isLoading && !isTopRatingProductsError && topRatedProducts.length > 0 && (
         <div className="carousel-container">
           <Carousel autoplay dots={false}>
-            {topRatedProducts?.map((product) => (
-              <Fragment>
-                <div key={product?._id} className="contentStyle" >
+            {topRatedProducts?.map((product, index) => (
+              <Fragment key={product?._id}>
+                <div  className="contentStyle" >
                   <div className="content-box">
                     <div className="content">
                       <h1>{product.brand}</h1>
