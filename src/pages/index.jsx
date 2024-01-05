@@ -13,8 +13,8 @@ export const ordersDetailAndPayment = lazy(() => import(/* webpackChunkName: "Ca
 export const checkout = lazy(() => import(/* webpackChunkName: "Cart" */ "../modules/checkoutProcess/CheckoutProcess"));
 
 // profile protected routes----------------------------------------------------->
-export const Profile = lazy(() => import(/* webpackChunkName: "home" */ "../modules/dashboard/profile"));
-export const userOrder = lazy(() => import(/* webpackChunkName: "home" */ "../modules/dashboard/Order/Index"));
+export const Profile = lazy(() => import(/* webpackChunkName: "profile" */ "../modules/dashboard/profile"));
+export const userOrder = lazy(() => import(/* webpackChunkName: "Order" */ "../modules/dashboard/Order"));
 
 // admin routes----------------------------------------------------->
 export const Users = lazy(() => import(/* webpackChunkName: "home" */ "../modules/Admin/Users/Index"));
