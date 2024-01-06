@@ -19,7 +19,7 @@ export const userOrder = lazy(() => import(/* webpackChunkName: "Order" */ "../m
 // admin routes----------------------------------------------------->
 export const Users = lazy(() => import(/* webpackChunkName: "home" */ "../modules/Admin/Users/Index"));
 export const Product = lazy(() => import(/* webpackChunkName: "home" */ "../modules/Admin/Product"));
-export const AdminOrder = lazy(() => import(/* webpackChunkName: "home" */ "../modules/Admin/AdminOrder/Index"));
+export const AdminOrder = lazy(() => import(/* webpackChunkName: "home" */ "../modules/Admin/AdminOrder"));
 
 // other routes---------------------------------------------------->
 export const NotFound = lazy(() => import(/* webpackChunkName: "home" */ "../modules/notFound/NotFound"));
