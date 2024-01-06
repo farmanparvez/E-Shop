@@ -1,10 +1,10 @@
 import {
   DashboardOutlined,
   MedicineBoxOutlined,
-  UserAddOutlined,
-  SettingOutlined,
+  // UserAddOutlined,
+  // SettingOutlined,
   CreditCardOutlined,
-  WalletOutlined
+  // WalletOutlined
 } from "@ant-design/icons";
 
 const Menu = () => {

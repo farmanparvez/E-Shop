@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { getWomenProduct } from "../../redux/actions/userProductAction";
 import { useDispatch, useSelector } from "react-redux";
 import Product from "../../components/ProductCard/Product";
@@ -14,7 +14,6 @@ const WomneContent = () => {
   );
   const { pathname } = useLocation();
 
-  // console.log(womenProduct);
   const dispatch = useDispatch();
   useEffect(() => {
     if (pathname === '/') {

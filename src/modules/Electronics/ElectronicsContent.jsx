@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { getElectronicsProduct } from "../../redux/actions/userProductAction";
 import { useDispatch, useSelector } from "react-redux";
-import SpinContainer from "../../components/SpinContainer/SpinContainer";
 import Product from "../../components/ProductCard/Product";
 import CustomPagination from "../../components/Pagination/Pagination";
 import { setPagination, reset } from "../../redux/reducers/userProduct";

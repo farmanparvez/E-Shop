@@ -44,7 +44,7 @@ const productSlice = createSlice({
     page: { page: 1, limit: 12 },
   },
   reducers: {
-    reset: (state, action) => {
+    reset: (state) => {
       state.isLoading = false;
       state.isError = false;
       state.isMessage = null;
@@ -65,7 +65,7 @@ const productSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(topratingproducts.pending, (state, action) => {
+      .addCase(topratingproducts.pending, (state) => {
         state.isLoading = true;
       })
       .addCase(topratingproducts.fulfilled, (state, action) => {
@@ -84,18 +84,18 @@ const productSlice = createSlice({
         state.products = action.payload.product;
         state.count = action.payload.count;
       })
-      .addCase(getProduct.rejected, (state, action) => {
+      .addCase(getProduct.rejected, (state) => {
         state.isLoading = false;
         state.isError = true;
       })
-      .addCase(getProductByID.pending, (state, action) => {
+      .addCase(getProductByID.pending, (state) => {
         state.isLoading = true;
       })
       .addCase(getProductByID.fulfilled, (state, action) => {
         state.isLoading = false;
         state.product = action.payload;
       })
-      .addCase(getProductByID.rejected, (state, action) => {
+      .addCase(getProductByID.rejected, (state) => {
         state.isLoading = false;
         state.isError = true;
       })
@@ -125,18 +125,18 @@ const productSlice = createSlice({
 
 
       // admin-------------------------------------------------------------------------------------------->
-      .addCase(getAdminProductProductByID.pending, (state, action) => {
+      .addCase(getAdminProductProductByID.pending, (state) => {
         state.isLoading = true;
       })
       .addCase(getAdminProductProductByID.fulfilled, (state, action) => {
         state.isLoading = false;
         state.adminProductList = action.payload;
       })
-      .addCase(getAdminProductProductByID.rejected, (state, action) => {
+      .addCase(getAdminProductProductByID.rejected, (state) => {
         state.isLoading = false;
         state.isError = true;
       })
-      .addCase(uploadProductImage.pending, (state, action) => {
+      .addCase(uploadProductImage.pending, (state) => {
         state.isLoadingImage = true;
       })
       .addCase(uploadProductImage.fulfilled, (state, action) => {
@@ -148,36 +148,36 @@ const productSlice = createSlice({
         state.isError = true;
         state.isMessage = action.payload;
       })
-      .addCase(createProduct.pending, (state, action) => {
+      .addCase(createProduct.pending, (state) => {
         state.isLoadingForm = true;
       })
-      .addCase(createProduct.fulfilled, (state, action) => {
+      .addCase(createProduct.fulfilled, (state) => {
         state.isLoadingForm = false;
         state.uploadImage = null;
         state.isDrawerVisible = {};
       })
-      .addCase(createProduct.rejected, (state, action) => {
+      .addCase(createProduct.rejected, (state) => {
         state.isLoadingForm = false;
         state.isError = true;
       })
-      .addCase(updateProductByID.pending, (state, action) => {
+      .addCase(updateProductByID.pending, (state) => {
         state.isLoadingForm = true;
       })
-      .addCase(updateProductByID.fulfilled, (state, action) => {
+      .addCase(updateProductByID.fulfilled, (state) => {
         state.isLoadingForm = false;
         state.isDrawerVisible = {};
       })
-      .addCase(updateProductByID.rejected, (state, action) => {
+      .addCase(updateProductByID.rejected, (state) => {
         state.isLoadingForm = false;
         state.isError = true;
       })
-      .addCase(deleteProductByID.pending, (state, action) => {
+      .addCase(deleteProductByID.pending, (state) => {
         state.isLoadingForm = true;
       })
-      .addCase(deleteProductByID.fulfilled, (state, action) => {
+      .addCase(deleteProductByID.fulfilled, (state) => {
         state.isLoadingForm = false;
       })
-      .addCase(deleteProductByID.rejected, (state, action) => {
+      .addCase(deleteProductByID.rejected, (state) => {
         state.isLoadingForm = false;
         state.isError = true;
       })

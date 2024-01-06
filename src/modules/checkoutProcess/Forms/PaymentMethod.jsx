@@ -1,18 +1,16 @@
 import { Radio, Form, Row, Col } from "antd";
-import { setModalVisible, setCurrent } from "../../../redux/reducers/cartSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { setCurrent } from "../../../redux/reducers/cartSlice";
+import { useDispatch } from "react-redux";
 import { Button } from "../../../components/ui";
 import { Fragment } from "react";
 
 const PaymentMethod = (props) => {
     const [form] = Form.useForm();
     const dispatch = useDispatch()
-    const { isVisible, details: { shippingAddress } } = props
-    console.log(isVisible)
+    const { details: { shippingAddress } } = props
 
     const onFinish = async (values) => {
         console.log("Received values of form: ", values);
-        // dispatch(setModalVisible({ visible: true, type: "addressReview", data: { ...values, shippingAddress: isVisible?.shippingAddress } }))
         dispatch(setCurrent({ current: 2, data: { ...values, shippingAddress } }))
     };
 

@@ -1,17 +1,13 @@
-import { InputNumber, Form, Input, Row, Col } from "antd";
-import { setModalVisible, saveDetails, setCurrent } from "../../../redux/reducers/cartSlice";
+import { InputNumber, Form, Input } from "antd";
+import { setCurrent } from "../../../redux/reducers/cartSlice";
 import { useDispatch } from "react-redux";
 import { Button } from "../../../components/ui";
 
-const Shipping = (props) => {
+const Shipping = () => {
     const [form] = Form.useForm();
     const dispatch = useDispatch()
 
     const onFinish = async (values) => {
-        console.log("Received values of form: ", values);
-        // dispatch(setModalVisible({ visible: true, type: "paymentMethod", shippingAddress: values }))
-        // dispatch(setModalVisible({ visible: true, type: "paymentMethod", shippingAddress: values }))
-        // dispatch(saveDetails({ shippingAddress: values, current: 0 }))
         dispatch(setCurrent({ current: 1, shippingAddress: values }))
     };
 

@@ -1,5 +1,4 @@
-import React from "react";
-import { Space, Button, Tooltip, Popconfirm, Row, Col } from "antd";
+import { Button, Tooltip, Popconfirm, Row, Col } from "antd";
 import { setModalVisible, setDrawerVisible } from "../../../../redux/reducers/productReducer";
 import { useDispatch } from "react-redux";
 import {

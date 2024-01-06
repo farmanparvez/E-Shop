@@ -1,7 +1,5 @@
 // import axios from "axios";
-import React from "react";
 import { useDispatch } from "react-redux";
-import { uploadProductImage } from "../../../../redux/actions/productAction";
 import { Form, Select, Input, Button } from "antd";
 
 import { editUser } from "../../../../redux/actions/userActions";
@@ -15,19 +13,8 @@ const UserForm = ({ isDrawerVisible: { data }, isLoadingForm }) => {
         if (data) dispatch(editUser({ values, id: data._id }));
     };
 
-    const normFile = (e) => {
-        console.log("Upload event:", e);
-        const file = e.file.originFileObj;
-        const formData = new FormData();
-        formData.append("image", file);
-        const res = dispatch(uploadProductImage(formData)).then((res) => res.payload)
-        return [res];
-    };
-
     return (
         <>
-            {/* {data && <img style={{ width: '300px', height: '300px' }} scr={"http://localhost:8000/" + data?.image} alt='' />}
-            {data && <img style={{ width: '300px', height: '300px' }} scr={"http://localhost:3000/" + data?.image} alt='' />} */}
             <Form
                 layout={"vertical"}
                 form={form}

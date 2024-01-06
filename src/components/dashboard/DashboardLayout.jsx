@@ -1,5 +1,5 @@
-import React, { Suspense } from 'react'
-import { Layout, Menu, theme, Spin } from 'antd';
+import { Suspense } from 'react'
+import { Layout, Menu, Spin } from 'antd';
 import menu from "./Menu";
 import { NavLink, Outlet } from 'react-router-dom';
 import "./dashboardLayout.scss"

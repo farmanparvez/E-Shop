@@ -16,7 +16,7 @@ const cartSlice = createSlice({
         setModalVisible: (state, action) => {
             state.isVisible = action.payload;
         },
-        setCartItem: (state, action) => {
+        setCartItem: (state) => {
             state.cartItems = [];
         },
         setCurrent: (state, action) => {
@@ -42,7 +42,7 @@ const cartSlice = createSlice({
             .addCase(addCartItems.pending, (state) => {
                 state.isLoadingForm = true;
             })
-            .addCase(addCartItems.fulfilled, (state, action) => {
+            .addCase(addCartItems.fulfilled, (state) => {
                 state.isLoadingForm = false;
             })
             .addCase(addCartItems.rejected, (state) => {
@@ -52,7 +52,7 @@ const cartSlice = createSlice({
             .addCase(deleteCartItem.pending, (state) => {
                 state.isLoadingForm = true;
             })
-            .addCase(deleteCartItem.fulfilled, (state, action) => {
+            .addCase(deleteCartItem.fulfilled, (state) => {
                 state.isLoadingForm = false;
             })
             .addCase(deleteCartItem.rejected, (state) => {

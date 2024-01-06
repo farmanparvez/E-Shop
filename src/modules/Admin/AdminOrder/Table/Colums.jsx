@@ -1,7 +1,5 @@
-import React from "react";
-import { Space, Button, Tooltip, Popconfirm, Row, Col } from "antd";
-import { setModalVisible, setDrawerVisible } from "../../../../redux/reducers/productReducer";
-import { useDispatch, useSelector } from "react-redux";
+import { Button, Tooltip, Row, Col } from "antd";
+import { useDispatch } from "react-redux";
 import { updateOrderToDelivered } from "../../../../redux/actions/orderAction";
 
 const Coloums = () => {
@@ -48,14 +46,12 @@ const Coloums = () => {
     {
       title: "Delivery",
       key: "action",
-      // width: "400",
       align: "center",
       render: (_, record) => (
         <Row gutter={10}>
           <Col>
             <Tooltip placement="top" title={"View"}>
               <Button disabled={record.isDelivered}
-                // loading={isLoadingDelivered}
                 type="primary"
                 onClick={() => dispatch(updateOrderToDelivered(record._id))
                 }

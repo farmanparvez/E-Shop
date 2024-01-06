@@ -1,20 +1,8 @@
-import React from "react";
-import { Space, Button, Tooltip, Popconfirm, Row, Col } from "antd";
-import { setModalVisible, setDrawerVisible } from "../../../../redux/reducers/productReducer";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  EyeTwoTone,
-  EditTwoTone,
-  DeleteTwoTone,
-  QuestionCircleOutlined,
-} from "@ant-design/icons";
-import { updateOrderToDelivered } from "../../../../redux/actions/orderAction";
+import { Button, Tooltip, Row, Col } from "antd";
 import { useNavigate } from "react-router-dom";
 
 const Coloums = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { isLoadingDelivered } = useSelector((state) => state.order);
 
   const data = [
     {

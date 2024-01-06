@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import { Carousel, Spin, Result, Empty } from "antd";
 import { topratingproducts } from "../../../../redux/actions/productAction";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,7 +9,7 @@ import { Button } from "../../../../components/ui"
 import "./carousal.scss";
 
 const Carousal = () => {
-  const { isLoadingTopRatingProducts, isLoading, topRatedProducts, isTopRatingProductsError } = useSelector((state) => state.product);
+  const { isLoading, topRatedProducts, isTopRatingProductsError } = useSelector((state) => state.product);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const Carousal = () => {
       {!isLoading && !isTopRatingProductsError && topRatedProducts.length > 0 && (
         <div className="carousel-container">
           <Carousel autoplay dots={false}>
-            {topRatedProducts?.map((product, index) => (
+            {topRatedProducts?.map((product) => (
               <Fragment key={product?._id}>
                 <div  className="contentStyle" >
                   <div className="content-box">

@@ -1,5 +1,4 @@
-import { Rate, Form, Select, Input, Empty } from "antd";
-import { Button } from "../../../components/ui";
+import { Rate, Empty } from "antd";
 import CommentForm from "./CommentForm";
 
 const ReviewSection = (props) => {

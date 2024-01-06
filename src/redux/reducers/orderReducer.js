@@ -26,40 +26,40 @@ const orderSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getOrderDetails.pending, (state, action) => {
+      .addCase(getOrderDetails.pending, (state) => {
         state.isLoading = true;
       })
       .addCase(getOrderDetails.fulfilled, (state, action) => {
         state.isLoading = false;
         state.orderDetails = action.payload.order;
       })
-      .addCase(getOrderDetails.rejected, (state, action) => {
+      .addCase(getOrderDetails.rejected, (state) => {
         state.isLoading = false;
         state.isError = true;
       })
-      .addCase(payOrder.pending, (state, action) => {
+      .addCase(payOrder.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(payOrder.fulfilled, (state, action) => {
+      .addCase(payOrder.fulfilled, (state) => {
         state.isLoading = false;
       })
-      .addCase(payOrder.rejected, (state, action) => {
+      .addCase(payOrder.rejected, (state) => {
         state.isLoading = false;
         state.isError = true;
       })
-      .addCase(getUserOrder.pending, (state, action) => {
+      .addCase(getUserOrder.pending, (state) => {
         state.isLoading = true;
       })
       .addCase(getUserOrder.fulfilled, (state, action) => {
         state.isLoading = false;
         state.userOrders = action.payload.orders;
       })
-      .addCase(getUserOrder.rejected, (state, action) => {
+      .addCase(getUserOrder.rejected, (state) => {
         state.isLoading = false;
       })
 
       // admin----------------------------------------------------------------------------------------->
-      .addCase(getAdminOrders.pending, (state, action) => {
+      .addCase(getAdminOrders.pending, (state) => {
         state.isLoading = true;
       })
       .addCase(getAdminOrders.fulfilled, (state, action) => {
@@ -74,7 +74,7 @@ const orderSlice = createSlice({
       .addCase(updateOrderToDelivered.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(updateOrderToDelivered.fulfilled, (state) => {
+      .addCase(updateOrderToDelivered.fulfilled, () => {
         // state.isLoading = false;
       })
       .addCase(updateOrderToDelivered.rejected, (state) => {

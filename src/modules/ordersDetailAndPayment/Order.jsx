@@ -21,7 +21,7 @@ const Order = () => {
 
     useEffect(() => {
         dispatch(getOrderDetails(id))
-    }, [id])
+    }, [id, dispatch])
 
     const addPayPalScript = async () => {
         const script = document.createElement("script");
@@ -35,7 +35,7 @@ const Order = () => {
     useEffect(() => {
         if (!orderDetails?.isPaid && !window.paypal) addPayPalScript();
         // return () => dispatch(reset())
-    }, [dispatch, orderDetails, sdkReady]);
+    }, [orderDetails, sdkReady]);
 
 
     const successPaymentHandler = (paymentResult) => {

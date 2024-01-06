@@ -1,4 +1,3 @@
-import React from "react";
 import WomneContent from "./WomneContent";
 import Container from "../../components/Container/Container"
 import "../../constant/style.scss"

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import { Empty, Spin, Result } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 import "./spin.scss"

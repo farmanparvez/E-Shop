@@ -1,12 +1,5 @@
-// import axios from "axios";
-import React from "react";
 import { useDispatch } from "react-redux";
-import {
-    createProduct,
-    // getProductByID,
-    uploadProductImage,
-    updateProductByID,
-} from "../../../../redux/actions/productAction";
+import { createProduct, uploadProductImage, updateProductByID } from "../../../../redux/actions/productAction";
 import { InputNumber, Form, Select, Input, Button, Upload, Spin } from "antd";
 import { baseURL } from "../../../../utils/enviroment";
 const { Option } = Select;
@@ -36,7 +29,6 @@ const ProductForm = ({ isDrawerVisible: { data }, isLoadingForm, isLoadingImage 
     };
 
     const normFile = (e) => {
-        console.log("Upload event:", e);
         const file = e.file.originFileObj;
         const formData = new FormData();
         formData.append("image", file);

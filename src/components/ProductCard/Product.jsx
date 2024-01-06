@@ -1,4 +1,3 @@
-import React from "react";
 import { Rate } from "antd";
 import { baseURL } from "../../utils/enviroment";
 import "./productCard.scss";

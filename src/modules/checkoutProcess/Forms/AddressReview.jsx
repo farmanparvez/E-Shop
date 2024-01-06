@@ -3,18 +3,15 @@ import { Row, Col } from "antd";
 import { createOrder } from "../../../redux/actions/productAction";
 import { Button } from "../../../components/ui";
 import { useNavigate } from "react-router-dom";
-import { setCurrent } from "../../../redux/reducers/cartSlice";
 import { Link } from "react-router-dom";
 import { baseURL } from "../../../utils/enviroment";
 
 const AddressReview = () => {
     const dispatch = useDispatch()
-    const { isVisible, cartItems, details: { data } } = useSelector(({ cart }) => cart)
+    const { cartItems, details: { data } } = useSelector(({ cart }) => cart)
     const { isLoadingForm } = useSelector(({ product }) => product)
     const navigate = useNavigate()
 
-    console.log(data)
-    console.log("cartItems", cartItems)
     const addDecimals = (num) => {
         return (Math.round(num * 100) / 100).toFixed(2);
     };

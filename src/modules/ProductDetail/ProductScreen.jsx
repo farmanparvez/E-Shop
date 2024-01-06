@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductByID } from "../../redux/actions/productAction";
 import { USERDETAILS, baseURL } from "../../utils/enviroment";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Rate, Spin, Result, Select } from "antd";
 import { Button } from "../../components/ui"
 import Container from "../../components/Container/Container";
@@ -16,13 +16,8 @@ const ProductScreen = () => {
     const props = useSelector((state) => state.product);
     const { isLoading, isError, product, isLoadingForm } = props
     const [qty, setQty] = useState(1);
-    const [rating, setRating] = useState(0);
-    const [comment, setComment] = useState("");
-    console.log(product)
-
     const { id } = useParams();
     const dispatch = useDispatch();
-
     const numbers = Array.from({ length: product.countInStock }, (_, index) => index + 1);
 
     useEffect(() => {
@@ -30,7 +25,6 @@ const ProductScreen = () => {
     }, [dispatch, id]);
 
     const handleChange = (value) => {
-        console.log(`selected ${value}`);
         setQty(value)
     };
 

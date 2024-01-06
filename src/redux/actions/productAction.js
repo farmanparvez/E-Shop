@@ -71,44 +71,6 @@ export const productReviews = createAsyncThunk(
   }
 );
 
-
-// export const addCartItem = createAsyncThunk(
-//   "addCartItem/addCartItemInLocalStorege",
-//   async (val, thunkAPI) => {
-//     // thunkAPI.dispatch(setCartItem(false))
-//     const existItem =
-//       localStorage.getItem(CARTITEMS)?.length > 0 &&
-//       JSON.parse(localStorage.getItem(CARTITEMS)).find(
-//         (x) => x._id === val._id && x.user === val.user
-//       );
-//     if (existItem) return;
-//     const oldCartItems = localStorage.getItem(CARTITEMS)
-//       ? JSON.parse(localStorage.getItem(CARTITEMS))
-//       : [];
-//     const data = [...oldCartItems, val];
-//     localStorage.setItem(CARTITEMS, JSON.stringify(data));
-//     // thunkAPI.dispatch(setCartItem(true))
-//   }
-// );
-
-export const removeFromCart = createAsyncThunk(
-  "removeFromCart/removeFromCartLocalStorege",
-  async (id, thunkAPI) => {
-    const existItem = JSON.parse(localStorage.getItem("cartItem")).filter(
-      (x) => x._id !== id
-    );
-    if (existItem) localStorage.setItem("cartItem", JSON.stringify(existItem));
-  }
-);
-
-export const saveShippingAddress = createAsyncThunk(
-  "saveShippingAddress/saveShippingAddressLocalStorege",
-  async (data, thunkAPI) => {
-    // const existItem = JSON.parse(localStorage.getItem('cartItem')).filter(x => x._id !== id)
-    localStorage.setItem("shippingAddress", JSON.stringify(data));
-  }
-);
-
 export const createOrder = createAsyncThunk(
   "createOrder/createOrderProduct",
   async (data, thunkAPI) => {

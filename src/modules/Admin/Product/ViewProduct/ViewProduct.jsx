@@ -1,6 +1,4 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { baseURL } from "../../../../utils/enviroment";
 
 const ViewProduct = ({ isVisible: { data } }) => {

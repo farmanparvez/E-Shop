@@ -20,7 +20,7 @@ const userProductSlice = createSlice({
 
   },
   reducers: {
-    reset: (state, action) => {
+    reset: (state) => {
       state.isLoading = false;
       state.isSuccess = false;
       state.isError = false;
@@ -37,7 +37,7 @@ const userProductSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getMenProduct.pending, (state, action) => {
+      .addCase(getMenProduct.pending, (state) => {
         state.isLoading = true;
       })
       .addCase(getMenProduct.fulfilled, (state, action) => {
@@ -51,7 +51,7 @@ const userProductSlice = createSlice({
         state.isErrorInMenProducts = true;
         state.isMessage = action.payload;
       })
-      .addCase(getWomenProduct.pending, (state, action) => {
+      .addCase(getWomenProduct.pending, (state) => {
         state.isLoading = true;
       })
       .addCase(getWomenProduct.fulfilled, (state, action) => {
@@ -65,7 +65,7 @@ const userProductSlice = createSlice({
         state.isErrorInWomenProducts = true;
         state.isMessage = action.payload;
       })
-      .addCase(getElectronicsProduct.pending, (state, action) => {
+      .addCase(getElectronicsProduct.pending, (state) => {
         state.isLoading = true;
       })
       .addCase(getElectronicsProduct.fulfilled, (state, action) => {

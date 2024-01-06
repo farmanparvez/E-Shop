@@ -1,16 +1,14 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProduct } from "../../../../redux/actions/productAction";
 import Product from "../../../../components/ProductCard/Product";
-import { reset, setPagination } from "../../../../redux/reducers/productReducer";
-import CustomPagination from "../../../../components/Pagination/Pagination";
+import { reset } from "../../../../redux/reducers/productReducer";
 import { Link, useLocation } from "react-router-dom";
 import { Empty, Result, Spin } from "antd";
-import { Button } from "../../../../components/ui";
 import Slider from "react-slick";
 
 const LatestProduct = () => {
-    const { isLoading, isError, products, page: { page, limit }, count } = useSelector((state) => state.product);
+    const { isLoading, isError, products, page: { page, limit } } = useSelector((state) => state.product);
     const dispatch = useDispatch();
     const { pathname } = useLocation();
 
@@ -23,10 +21,6 @@ const LatestProduct = () => {
         }
         return () => dispatch(reset());
     }, [dispatch, page, limit, pathname]);
-
-    const onChange = (pageNumber) => {
-        dispatch(setPagination({ page: pageNumber, limit: 12 }));
-    };
 
     function SampleNextArrow(props) {
         const { className, style, onClick } = props;

@@ -1,8 +1,5 @@
-import { Table, Button } from "../../../../components/ui"
-import { useDispatch } from "react-redux"
+import { Table } from "../../../../components/ui"
 import Coloums from "./Colums";
-import { PlusSquareTwoTone } from "@ant-design/icons";
-import { setDrawerVisible } from "../../../../redux/reducers/productReducer";
 import { Fragment } from "react";
 
 const index = (props) => {

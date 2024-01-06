@@ -17,7 +17,7 @@ const userSlice = createSlice({
     userInfo: null,
   },
   reducers: {
-    reset: (state, action) => {
+    reset: (state) => {
       state.isLoading = false;
     },
     setModalVisible: (state, action) => {

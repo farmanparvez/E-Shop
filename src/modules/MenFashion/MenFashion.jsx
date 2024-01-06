@@ -1,4 +1,3 @@
-import React from "react";
 import MenContent from "./MenContent";
 import Container from "../../components/Container/Container"
 import "../../constant/style.scss"

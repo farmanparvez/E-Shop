@@ -45,7 +45,7 @@ export const postRequestForForm = (url, data) => {
   return axiosConfig.post(url, data, config).then((res) => res.data);
 };
 
-export const deleteRequest = (url, data = undefined) => {
+export const deleteRequest = (url) => {
   const Etoken = localStorage.getItem(ACCESSTOKEN) ? localStorage.getItem(ACCESSTOKEN) : undefined;
 
   const config = {

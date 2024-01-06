@@ -12,7 +12,7 @@ const Cart = () => {
     const props = useSelector(({ cart }) => cart)
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const { cartItems, isVisible } = props
+    const { cartItems } = props
 
     return (
         <div className="cart-wrapper">

@@ -1,4 +1,3 @@
-import React from "react";
 import { Button, Tooltip, Popconfirm, Row, Col } from "antd";
 import { setModalVisible, setDrawerVisible } from "../../../../redux/reducers//userReducer.js";
 import { useDispatch } from "react-redux";

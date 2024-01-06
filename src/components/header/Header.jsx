@@ -19,7 +19,7 @@ const Navber = () => {
 
     useEffect(() => {
         if (localStorage.getItem(USERDETAILS)) dispatch(getCartItems())
-    }, [])
+    }, [dispatch])
 
     const logout = () => {
         dispatch(setCartItem())

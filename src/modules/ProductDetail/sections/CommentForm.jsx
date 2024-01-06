@@ -1,4 +1,4 @@
-import { Rate, Form, Select, Input } from "antd";
+import { Rate, Form, Input } from "antd";
 import { Button } from "../../../components/ui";
 import { productReviews } from "../../../redux/actions/productAction";
 import { useDispatch } from "react-redux";
@@ -17,7 +17,7 @@ const CommentForm = (props) => {
         setTimeout(() => {
             dispatch(reset())
         }, [2000])
-    }, [isReviewError])
+    }, [isReviewError, dispatch])
 
     const onFinish = (values) => {
         if (!localStorage.getItem(USERDETAILS)) return navigate('/signin')
