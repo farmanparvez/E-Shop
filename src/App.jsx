@@ -4,7 +4,7 @@ import { Fragment } from "react";
 import { Routes, Route } from "react-router-dom"
 import LayoutContainer from "./layout/Layout";
 import DashboardLayout from "./components/dashboard/DashboardLayout";
-import * as Routing from './pages';
+import * as Routing from './pages/Index';
 import Notification from "./components/Notification/Notification"
 import ProtectRoute from "./utils/ProtectRoute";
 import { USER, ADMIN } from "./utils/enviroment";
