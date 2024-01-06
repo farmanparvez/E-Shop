@@ -17,11 +17,11 @@ export const Profile = lazy(() => import(/* webpackChunkName: "profile" */ "../m
 export const userOrder = lazy(() => import(/* webpackChunkName: "Order" */ "../modules/dashboard/Order"));
 
 // admin routes----------------------------------------------------->
-export const Users = lazy(() => import(/* webpackChunkName: "home" */ "../modules/Admin/Users/Index"));
-export const Product = lazy(() => import(/* webpackChunkName: "home" */ "../modules/Admin/Product"));
-export const AdminOrder = lazy(() => import(/* webpackChunkName: "home" */ "../modules/Admin/AdminOrder"));
+export const Users = lazy(() => import(/* webpackChunkName: "Users" */ "../modules/Admin/Users"));
+export const Product = lazy(() => import(/* webpackChunkName: "Product" */ "../modules/Admin/Product"));
+export const AdminOrder = lazy(() => import(/* webpackChunkName: "AdminOrder" */ "../modules/Admin/AdminOrder"));
 
 // other routes---------------------------------------------------->
-export const NotFound = lazy(() => import(/* webpackChunkName: "home" */ "../modules/notFound/NotFound"));
-export const UnAuthorized = lazy(() => import(/* webpackChunkName: "home" */ "../modules/UnAuthorized/UnAuthorized"));
+export const NotFound = lazy(() => import(/* webpackChunkName: "NotFound" */ "../modules/notFound/NotFound"));
+export const UnAuthorized = lazy(() => import(/* webpackChunkName: "UnAuthorized" */ "../modules/UnAuthorized/UnAuthorized"));
 
