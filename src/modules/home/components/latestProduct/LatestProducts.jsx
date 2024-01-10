@@ -115,7 +115,7 @@ const LatestProduct = () => {
                 {!isLoading && !isError && products.length === 0 && <Empty className="center-by-postion" />}
                 {!isLoading && !isError && products?.length > 0 && <Slider {...settings}>
                     {products.map((product) => (
-                        <Link key={product._id} to={`/product/${product._id}`}>
+                        <Link key={product._id} to={`/product/${product._id}`} className="latest-product-link">
                             <Product product={product} />
                         </Link>
                     ))}

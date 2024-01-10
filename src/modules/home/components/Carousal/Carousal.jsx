@@ -17,14 +17,6 @@ const Carousal = () => {
     return () => dispatch(reset());
   }, [dispatch]);
 
-  // const contentStyle = {
-  //   minHeight: "500px",
-  //   display: "flex",
-  //   width: "70%",
-  //   margin: "0 auto",
-  //   flexWrap: "wrap",
-  // };
-
   return (
     <div className="size">
       {isLoading && !isTopRatingProductsError && <Spin className="center-by-postion" />}
@@ -32,7 +24,7 @@ const Carousal = () => {
       {!isLoading && !isTopRatingProductsError && topRatedProducts.length === 0 && <Empty className="center-by-postion" />}
       {!isLoading && !isTopRatingProductsError && topRatedProducts.length > 0 && (
         <div className="carousel-container">
-          <Carousel autoplay dots={false}>
+          <Carousel  dots={false}>
             {topRatedProducts?.map((product) => (
               <Fragment key={product?._id}>
                 <div  className="contentStyle" >

@@ -8,6 +8,9 @@
   // box-shadow: 1px 1px 4px 1px #1677ff;
   z-index: 10;
   background-color: #e7e7e7;
+  @media only screen and (max-width: 500px) {
+    padding: 0 20px !important;
+  }
 }
 
 .header-box {
@@ -19,10 +22,10 @@
     // background: $white;
     font-weight: 700;
     font-size: 22px;
-    margin: 10px;
+    // margin: 10px;
     border-radius: 8px;
     height: 43px;
-    padding: 0px 10px;
+    // padding: 0px 10px;
   }
   .right-section {
     @include flex();
@@ -36,7 +39,10 @@
 .cart {
   @include flex();
   cursor: pointer;
-  h3{
+  h3 {
     margin-left: 10px;
+    @media only screen and (max-width: 469px) {
+      display: none;
+    }
   }
 }

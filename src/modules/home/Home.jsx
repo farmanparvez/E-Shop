@@ -1,6 +1,5 @@
 import Carousel from "./components/Carousal/Carousal"
 import Category from "./components/Category"
-// import LatestProduct from "../LatestProducts/LatestProduct"
 import LatestProduct from "./components/latestProduct/LatestProducts"
 import MenFashion from "../MenFashion/MenContent"
 import WominFashion from "../WomenFashion/WomneContent"
