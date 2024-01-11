@@ -4,10 +4,10 @@ import { getMenProduct, getWomenProduct, getElectronicsProduct } from "../action
 const userProductSlice = createSlice({
   name: "userProduct",
   initialState: {
-    isLoading: false,
+    isLoading: true,
     isError: false,
     count: null,
-    page: { page: 1, limit: 12},
+    page: { page: 1, limit: 12 },
     // MensProduct
     menProduct: [],
     isErrorInMenProducts: false,

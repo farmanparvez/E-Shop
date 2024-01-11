@@ -12,8 +12,6 @@ import {
   topRatingProductsAPI,
 } from "../../service/productAPI";
 import { notificationHandler } from "../reducers/globalSlice";
-// import { CARTITEMS } from "../../utils/enviroment";
-// import { setCartItem } from "../reducers/productReducer";
 
 export const topratingproducts = createAsyncThunk(
   "product/topratingproducts",

@@ -44,52 +44,52 @@ const ProductScreen = () => {
 
     return (
         <Container>
-            <Spin className="spinProdutDetail" spinning={isLoading}>
-                {!isLoading && isError && <Result className="center-by-postion" status="500" title="500" subTitle="Sorry, something went wrong." />}
-                {!isError && <div>
-                    <div className="product-details-container">
-                        <div className="left-box">
-                            <div className="img-box">
-                                <img src={baseURL + product?.image} alt="" />
-                            </div>
-                            <div className="flex">
-                                <div>
-                                    <h2 className="brand">{product?.brand}</h2>
-                                    <h1 >{product?.name}</h1>
-                                    <Rate className="rating" value={product.rating} />
-                                    <p>
-                                        {product?.description}
-                                        {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit alias quo ipsum sapiente doloremque? Dignissimos repellendus doloribus aut expedita animi odit, consequatur at dolore ea praesentium aperiam maiores, facere debitis. */}
-                                    </p>
-                                    <h1 className="price">${product?.price}</h1>
-                                    <div className="status">
-                                        <div><p>Status:</p></div>
-                                        <div className={`${product?.countInStock > 0 ? "inStock" : "outOfStock"}`} > <h4>{product.countInStock > 0 ? "In Stock" : "Out Of Stock"}</h4></div>
-                                    </div>
-                                    <div className="countSelect">
-                                        <Select
-                                            defaultValue="1"
-                                            style={{
-                                                width: 120,
-                                            }}
-                                            onChange={handleChange}
-                                            options={numbers?.map(res => ({ label: res, value: res }))}
-                                        />
-                                    </div>
-                                    <div className="buttons">
-                                        <Button style={{ width: "300px", height: "40px" }} color="yellow">Buy now</Button><br />
-                                        <Button onClick={addToCartHandler} color="blue" style={{ width: "300px", height: "40px" }} loading={isLoadingForm} ><ShoppingCartOutlined style={{ fontSize: "20px", marginRight: "10px" }} /> Add to card</Button>
-                                    </div>
+            <Spin spinning={isLoading}>
+                <div className="spinProdutDetail" >
+                    {!isLoading && isError && <Result className="center-by-postion" status="500" title="500" subTitle="Sorry, something went wrong." />}
+                    {!isLoading && !isError && <div>
+                        <div className="product-details-container">
+                            <div className="left-box">
+                                <div className="img-box">
+                                    <img src={baseURL + product?.image} alt="" />
                                 </div>
-                                <div>
+                                <div className="product-details">
+                                    <div>
+                                        <h2 className="brand">{product?.brand}</h2>
+                                        <h1 >{product?.name}</h1>
+                                        <Rate className="rating" value={product.rating} />
+                                        <p>
+                                            {product?.description}
+                                            {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit alias quo ipsum sapiente doloremque? Dignissimos repellendus doloribus aut expedita animi odit, consequatur at dolore ea praesentium aperiam maiores, facere debitis. */}
+                                        </p>
+                                        <h1 className="price">${product?.price}</h1>
+                                        <div className="status">
+                                            <div><p>Status:</p></div>
+                                            <div className={`${product?.countInStock > 0 ? "inStock" : "outOfStock"}`} > <h4>{product.countInStock > 0 ? "In Stock" : "Out Of Stock"}</h4></div>
+                                        </div>
+                                        <div className="countSelect">
+                                            <Select
+                                                defaultValue="1"
+                                                style={{
+                                                    width: 120,
+                                                }}
+                                                onChange={handleChange}
+                                                options={numbers?.map(res => ({ label: res, value: res }))}
+                                            />
+                                        </div>
+                                        <div className="buttons">
+                                            <Button className="btn" color="yellow">Buy now</Button><br />
+                                            <Button className="btn" onClick={addToCartHandler} color="blue" loading={isLoadingForm} ><ShoppingCartOutlined style={{ fontSize: "20px", marginRight: "10px" }} /> Add to card</Button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <ReviewSection {...props} />
-                    </div>
-                </div>}
+                        <div>
+                            <ReviewSection {...props} />
+                        </div>
+                    </div>}
+                </div>
             </Spin>
         </Container >
     );

@@ -50,7 +50,7 @@ const WomneContent = () => {
           <div className="product-box">
             {isLoading && !isErrorInWomenProducts && <Spin className="center-by-postion" />}
             {!isLoading && isErrorInWomenProducts && <Result className="center-by-postion" status="500" title="500" subTitle="Sorry, something went wrong." />}
-            {!isLoading && !isErrorInWomenProducts && womenProduct.length === 0 && <Empty className="center-by-postion" />}
+            {!isLoading && !isErrorInWomenProducts && !isErrorInWomenProducts && womenProduct.length === 0 && <Empty className="center-by-postion" />}
             {womenProduct?.length > 0 && womenProduct?.map((product) => (
               <Link key={product._id} to={`/product/${product._id}`}>
                 <Product product={product} />

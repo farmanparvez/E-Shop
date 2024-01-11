@@ -47,7 +47,7 @@ const ElectronicsContent = () => {
             {isLoading && !isErrorInElectronicProducts && <Spin className="center-by-postion" />}
             {!isLoading && isErrorInElectronicProducts && <Result className="center-by-postion" status="500" title="500" subTitle="Sorry, something went wrong." />}
             {!isLoading && !isErrorInElectronicProducts && electronicsProduct.length === 0 && <Empty className="center-by-postion" />}
-            {electronicsProduct?.length > 0 && electronicsProduct?.map((product) => (
+            {!isLoading && !isErrorInElectronicProducts && electronicsProduct?.length > 0 && electronicsProduct?.map((product) => (
               <Link key={product._id} to={`/product/${product._id}`}>
                 <Product product={product} />
               </Link>
