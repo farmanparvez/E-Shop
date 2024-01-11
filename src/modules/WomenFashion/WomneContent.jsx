@@ -6,7 +6,6 @@ import { useLocation, Link } from "react-router-dom";
 import { setPagination, reset } from "../../redux/reducers/userProduct";
 import CustomPagination from "../../components/Pagination/Pagination";
 import { Empty, Result, Spin } from "antd";
-import { Button } from "../../components/ui";
 
 const WomneContent = () => {
   const { isLoading, isErrorInWomenProducts, womenProduct, page: { page, limit }, count } = useSelector(
@@ -38,7 +37,12 @@ const WomneContent = () => {
           <div className="border-botom"></div>
         </div>
         <div>
-          {pathname === '/' && <Link to="/womens-fashion"><Button color="yellow" >See more</Button></Link>}
+          {pathname === '/' && <Link to="/womens-fashion">
+            <p className="see-more-link">
+              See more
+              <div className="see-more-link-underline" />
+            </p>
+          </Link>}
         </div>
       </div>
       <div className="latest-product-container">
@@ -47,7 +51,7 @@ const WomneContent = () => {
             {isLoading && !isErrorInWomenProducts && <Spin className="center-by-postion" />}
             {!isLoading && isErrorInWomenProducts && <Result className="center-by-postion" status="500" title="500" subTitle="Sorry, something went wrong." />}
             {!isLoading && !isErrorInWomenProducts && womenProduct.length === 0 && <Empty className="center-by-postion" />}
-            {womenProduct?.map((product) => (
+            {womenProduct?.length > 0 && womenProduct?.map((product) => (
               <Link key={product._id} to={`/product/${product._id}`}>
                 <Product product={product} />
               </Link>

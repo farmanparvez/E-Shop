@@ -59,6 +59,16 @@
     margin: 0.5em 0rem;
     font-weight: bolder;
   }
+  .see-more-link {
+    font-size: 1.1rem;
+
+  }
+  .see-more-link-underline {
+    width: 100%;
+    height: 3px;
+    background-color: $yellow;
+    border-radius: 5px;
+  }
   // @media only screen and (max-width: 600px){
   //   margin-left: 20px;
   // }

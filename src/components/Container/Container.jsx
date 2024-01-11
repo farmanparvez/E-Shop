@@ -1,5 +1,5 @@
 import { Fragment } from "react"
-import Footer from "../../layout/Footer"
+import Footer from "./Footer"
 import "./container.scss"
 
 const Container = ({ children }) => {

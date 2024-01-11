@@ -10,16 +10,6 @@ const Category = () => {
         </div>
       </div>
       <div className="category-container">
-        <div className="col">
-          <Link to="/womens-fashion">
-            <div className="center">
-              {/* <div className="icon">
-                <img src="images/girl-fashion.png" alt="" />
-              </div> */}
-              <h1>Ladies Fashion</h1>
-            </div>
-          </Link>
-        </div>
         <div className="col middle-col">
           <Link to="/mens-fashion">
             <div className="center">
@@ -27,6 +17,16 @@ const Category = () => {
                 <img src="images/men-fashion (2).png" alt="" />
               </div> */}
               <h1>Mens Fashion</h1>
+            </div>
+          </Link>
+        </div>
+        <div className="col">
+          <Link to="/womens-fashion">
+            <div className="center">
+              {/* <div className="icon">
+                <img src="images/girl-fashion.png" alt="" />
+              </div> */}
+              <h1>Women Fashion</h1>
             </div>
           </Link>
         </div>

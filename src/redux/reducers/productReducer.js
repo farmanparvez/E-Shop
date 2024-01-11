@@ -29,7 +29,7 @@ const productSlice = createSlice({
     cartItems: [],
 
 
-
+    
     data: null,
     uploadImage: null,
     shippingAddress: JSON.parse(localStorage.getItem('shippingAddress')),
