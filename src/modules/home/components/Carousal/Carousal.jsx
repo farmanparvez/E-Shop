@@ -24,7 +24,7 @@ const Carousal = () => {
       {!isLoading && !isTopRatingProductsError && topRatedProducts.length === 0 && <Empty className="center-by-postion" />}
       {!isLoading && !isTopRatingProductsError && topRatedProducts.length > 0 && (
         <div className="carousel-container">
-          <Carousel  dots={false}>
+          <Carousel autoplay dots={false}>
             {topRatedProducts?.map((product) => (
               <Fragment key={product?._id}>
                 <div  className="contentStyle" >
