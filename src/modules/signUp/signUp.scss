@@ -28,10 +28,13 @@
     // background: $darkGray;
     background: $white;
     // border: 2px solid gray;
-    min-height: 70dvh;
+    height: 70vh;
     // label{
     //   color: white;
     // }
+    @media only screen and (max-width:500px){
+      height: 100%;
+    }
     .form-header {
       background-color: $darkGray;
       margin: 15px;
