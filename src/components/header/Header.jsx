@@ -8,6 +8,7 @@ import { Button } from '../ui';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCartItems } from '../../redux/actions/cartActions';
 import { setCartItem } from '../../redux/reducers/cartSlice';
+import logo from "../../assets/logo.png"
 import "./header.scss"
 const { Header } = Layout;
 
@@ -66,7 +67,7 @@ const Navber = () => {
             <div className='header-box'>
                 <Link to="/">
                     <div className='logo'>
-                        E-Shop
+                        <img src={logo} alt="E-Shop" />
                     </div>
                 </Link>
                 <div className='right-section'>
