@@ -2,25 +2,39 @@
 
 .auth-form-container {
   @include flex();
-  background: $white;
-  width: 90%;
+  // background: $white;
+  // width: 90%;
   height: calc(100vh - 65px);
   margin: 0 auto;
-  .left {
-    width: 65%;
-    h1 {
-      color: black;
-      font-size: 42px;
-      font-weight: 900;
-    }
-  }
+  background-image: url('../../assets/showcase.jpg'), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+  background-blend-mode: overlay;
+  // background: whitesmoke;
+
+
+  // backdrop-filter: 2px;
+  // .left {
+  //   width: 65%;
+  //   h1 {
+  //     color: black;
+  //     font-size: 42px;
+  //     font-weight: 900;
+  //   }
+  // }
   .right {
-    width: 35%;
-    background: whitesmoke;
+    width: 450px;
+    margin: 0 20px;
+    // background: whitesmoke;
     border-radius: 8px;
+    // background: $darkGray;
+    background: $white;
+    // border: 2px solid gray;
+    min-height: 70dvh;
+    // label{
+    //   color: white;
+    // }
     .form-header {
-      background-color: $blue;
-      margin: 10px;
+      background-color: $darkGray;
+      margin: 15px;
       padding: 10px 20px;
       border-radius: 8px;
       h1 {
@@ -30,7 +44,7 @@
     .form {
       height: 100%;
       width: 100%;
-      padding: 30px;
+      padding: 10px 20px;
     }
   }
 }

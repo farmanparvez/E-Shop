@@ -1,4 +1,4 @@
-/* Button.module.css */
+
 .button {
   border: none;
   padding: 8px 20px;
@@ -9,7 +9,7 @@
 }
 
 .standard {
-  background-color: #4caf50;
+  background-color: #323232;
 }
 
 .button:disabled {
@@ -20,6 +20,7 @@
 
 .blue {
   /* background-color: #333652; */
+  /* background-color: #323232; */
   background-color: #323232;
   color: #fff;
 }

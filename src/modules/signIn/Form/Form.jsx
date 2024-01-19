@@ -1,10 +1,11 @@
-import { Button, Form, Input } from 'antd';
+import { Form, Input } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../../redux/actions/authActions';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { getCartItems } from '../../../redux/actions/cartActions';
 import { reset } from '../../../redux/reducers/authReducer';
+import { Button } from '../../../components/ui';
 
 const SignInForm = () => {
     const [form] = Form.useForm();
@@ -60,7 +61,7 @@ const SignInForm = () => {
                 <Input.Password />
             </Form.Item>
             <Form.Item>
-                <Button loading={isLoading} type="primary" htmlType="submit">
+                <Button style={{ width: "100%", marginTop:"20px" }} loading={isLoading} color="yellow" htmlType="submit">
                     Signin
                 </Button>
             </Form.Item>

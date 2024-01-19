@@ -1,7 +1,8 @@
-import { Button, Form, Input } from 'antd';
+import { Form, Input } from 'antd';
 import { register } from '../../../redux/actions/authActions';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { Button } from '../../../components/ui';
 
 const SignUpForm = () => {
     const [form] = Form.useForm();
@@ -11,7 +12,7 @@ const SignUpForm = () => {
 
     const onFinish = (values) => {
         console.log('Received values of form: ', values);
-        dispatch(register(values)).then(() => navigate('/sigin'))
+        dispatch(register(values)).then(() => navigate('/signin'))
     };
 
     return (
@@ -89,7 +90,7 @@ const SignUpForm = () => {
                 <Input.Password />
             </Form.Item>
             <Form.Item>
-                <Button loading={isLoading} type="primary" htmlType="submit">
+                <Button style={{ width: "100%", marginTop:"10px" }} loading={isLoading} color="yellow" htmlType="submit">
                     Signup
                 </Button>
             </Form.Item>
