@@ -20,8 +20,8 @@ const Index = (props) => {
             </div>
             <div>
                 <Button
-                    type="primary"
-                    icon={<PlusSquareTwoTone />}
+                    color="yellow"
+                    icon={<PlusSquareTwoTone color="white" />}
                     onClick={() =>
                         dispatch(setDrawerVisible({ type: "create", visible: true }))
                     }

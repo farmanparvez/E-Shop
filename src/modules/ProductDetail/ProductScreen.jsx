@@ -8,9 +8,9 @@ import { Button } from "../../components/ui"
 import Container from "../../components/Container/Container";
 import ReviewSection from "./sections/ReviewSection";
 import { ShoppingCartOutlined } from '@ant-design/icons';
-import "./productdetails.scss";
 import { notificationHandler } from "../../redux/reducers/globalSlice";
 import { addCartItems } from "../../redux/actions/cartActions";
+import "./productdetails.scss";
 
 const ProductScreen = () => {
     const props = useSelector((state) => state.product);
@@ -24,9 +24,7 @@ const ProductScreen = () => {
         dispatch(getProductByID(id));
     }, [dispatch, id]);
 
-    const handleChange = (value) => {
-        setQty(value)
-    };
+    const handleChange = (value) => setQty(value)
 
     const addToCartHandler = () => {
         if (!localStorage.getItem(USERDETAILS)) return dispatch(notificationHandler({ type: "info", message: "Please Login First" }))

@@ -17,9 +17,9 @@ const Notification = () => {
       if (isNotification) {
         openNotificationWithIcon(type, message)
         if (message === 'jwt expired') {
-          navigate("/signin")
           localStorage.removeItem(USERDETAILS)
           localStorage.removeItem(ACCESSTOKEN)
+          navigate("/")
         }
         dispatch(reset())
       }

@@ -17,7 +17,7 @@ const Coloums = () => {
       title: "Name",
       dataIndex: "name",
       key: "name",
-      render: (text) => <span>{text}</span>,
+      render: (text) => <span>{text?.slice(0, 100)}</span>,
     },
     {
       title: "ID",
@@ -43,7 +43,7 @@ const Coloums = () => {
     {
       title: "Action",
       key: "action",
-      // width: "400",
+      width: 200,
       align: "center",
       render: (_, record) => (
         <Row gutter={10}>

@@ -5,9 +5,6 @@
   height: calc(100vh - 64px);
   padding: 30px;
   .cart-container {
-    // @include flexWithValue(space-between, center);
-    // width: 95%;
-    // flex-direction: column;
     margin: 0 auto;
     .left-box {
       width: 80%;
@@ -24,14 +21,10 @@
       width: 100%;
     }
     .itemBox {
-      // display: flex;
-      // justify-content: space-between;
       gap: 20px;
     }
     .cartItems {
       @include flexWithValue(start, center);
-      // @include flexWithValue(space-evenly, center);
-
       background-color: $bg;
       height: 140px;
       border-radius: 10px;
@@ -42,7 +35,6 @@
         @include flex();
         width: 100px;
         max-height: 130px;
-        // padding: 20px;
         img {
           max-width: 150px;
           max-height: 120px;
@@ -72,7 +64,6 @@
         margin-top: 20px;
         border-top: 2px solid $yellow;
         padding: 10px;
-        // margin: 10px 0;
       }
     }
   }

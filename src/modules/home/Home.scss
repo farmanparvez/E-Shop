@@ -1,4 +1,5 @@
 @import "../../styles/main.scss";
+@import "../../constant/style.scss";
 
 .wrapper {
   @include flexWithValue(center, start);
@@ -6,8 +7,6 @@
   .category-container {
     @include centerWithValue(center, center, 95%, 100%);
     margin: 0 auto;
-    // display: flex;
-    // flex-wrap: wrap;
     .col {
       text-align: center;
       background: $darkGray;
@@ -40,59 +39,14 @@
   }
 }
 
-.heading-container {
-  margin: 20px auto;
-  width: 90%;
-  @include flexWithValue(space-between, end);
-  h1 {
-    margin: 0.2em 0rem;
-    font-weight: 700;
-  }
-  .border-botom {
-    width: 100%;
-    height: 5px;
-    background-color: $yellow;
-    border-radius: 5px;
-  }
-  p {
-    color: $yellow;
-    margin: 0.5em 0rem;
-    font-weight: bolder;
-  }
-  .see-more-link {
-    font-size: 1.1rem;
-
-  }
-  .see-more-link-underline {
-    width: 100%;
-    height: 3px;
-    background-color: $yellow;
-    border-radius: 5px;
-  }
-  // @media only screen and (max-width: 600px){
-  //   margin-left: 20px;
-  // }
+.see-more-link {
+  font-size: 1.1rem;
 }
-
-.latest-product-wrapper {
-  @include flexWithValue(center, start);
-  flex-direction: column;
-  .latest-product-container {
-    width: 100%;
-    .product-wrapper {
-      width: 90%;
-      margin: auto;
-      position: relative;
-      .product-box {
-        min-height: 350px;
-        @include flexWithValue(start, center);
-        flex-wrap: wrap;
-        @media only screen and (max-width: 899px) {
-          justify-content: center;
-        }
-      }
-    }
-  }
+.see-more-link-underline {
+  width: 100%;
+  height: 5px;
+  background-color: $yellow;
+  border-radius: 5px;
 }
 
 .slider-container {
@@ -114,3 +68,45 @@
     }
   }
 }
+
+// .heading-container {
+//   margin: 20px auto;
+//   width: 90%;
+//   @include flexWithValue(space-between, end);
+//   h1 {
+//     margin: 0.2em 0rem;
+//     font-weight: 700;
+//   }
+//   .border-botom {
+//     width: 100%;
+//     height: 5px;
+//     background-color: $yellow;
+//     border-radius: 5px;
+//   }
+//   p {
+//     color: $yellow;
+//     margin: 0.5em 0rem;
+//     font-weight: bolder;
+//   }
+// }
+
+// .latest-product-wrapper {
+//   @include flexWithValue(center, start);
+//   flex-direction: column;
+//   .latest-product-container {
+//     width: 100%;
+//     .product-wrapper {
+//       width: 90%;
+//       margin: auto;
+//       position: relative;
+//       .product-box {
+//         min-height: 350px;
+//         @include flexWithValue(start, center);
+//         flex-wrap: wrap;
+//         @media only screen and (max-width: 899px) {
+//           justify-content: center;
+//         }
+//       }
+//     }
+//   }
+// }

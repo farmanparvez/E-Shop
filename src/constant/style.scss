@@ -13,6 +13,11 @@
         min-height: 350px;
         @include flexWithValue(start, center);
         flex-wrap: wrap;
+        // display: grid;
+        // grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        @media only screen and (max-width: 1000px) {
+          justify-content: center;
+        }
       }
     }
   }
@@ -22,7 +27,9 @@
   margin: 20px 60px;
   width: 90%;
   @include flexWithValue(space-between, end);
-
+  @media only screen and (max-width: 500px) {
+    margin: 20px 20px;
+  }
   h1 {
     margin: 0.2em 0rem;
     font-weight: 700;
@@ -35,7 +42,7 @@
   }
   p {
     color: $yellow;
-    margin: 0.5em 0rem;
+    // margin: 0.5em 0rem;
     font-weight: bolder;
   }
 }

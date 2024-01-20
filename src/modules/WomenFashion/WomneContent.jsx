@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Product from "../../components/ProductCard/Product";
 import { useLocation, Link } from "react-router-dom";
 import { setPagination, reset } from "../../redux/reducers/userProduct";
-import CustomPagination from "../../components/Pagination/Pagination";
+import { Pagination } from "../../components/ui";
 import { Empty, Result, Spin } from "antd";
 
 const WomneContent = () => {
@@ -58,7 +58,7 @@ const WomneContent = () => {
             ))}
           </div>
           <div className="right-move">
-            {pathname !== '/' && count > 12 && (<CustomPagination defaultCurrent={page} total={count} onChange={onChange} />)}
+            {pathname !== '/' && count > 12 && (<Pagination defaultCurrent={page} total={count} onChange={onChange} />)}
           </div>
         </div>
       </div>
