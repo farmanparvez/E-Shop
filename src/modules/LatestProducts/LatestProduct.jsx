@@ -1,12 +1,11 @@
-import  { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProduct } from "../../redux/actions/productAction";
 import Product from "../../components/ProductCard/Product";
 import { reset, setPagination } from "../../redux/reducers/productReducer";
-import CustomPagination from "../../components/Pagination/Pagination";
 import { Link, useLocation } from "react-router-dom";
 import { Empty, Result, Spin } from "antd";
-import { Button } from "../../components/ui";
+import { Button, Pagination } from "../../components/ui";
 
 const LatestProduct = () => {
   const { isLoading, isError, products, page: { page, limit }, count } = useSelector((state) => state.product);
@@ -45,7 +44,7 @@ const LatestProduct = () => {
             ))}
           </div>
           <div className="right-move">
-            {pathname !== '/' && count > 12 && (<CustomPagination defaultCurrent={page} total={count} onChange={onChange} />)}
+            {pathname !== '/' && count > 12 && (<Pagination defaultCurrent={page} total={count} onChange={onChange} />)}
             {pathname === '/' && <Link to="/latest-product"><Button color="yellow">More...</Button></Link>}
           </div>
         </div>
