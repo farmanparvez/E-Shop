@@ -6,7 +6,7 @@ export const Home = lazy(() => import(/* webpackChunkName: "home" */ "../modules
 export const MenFashion = lazy(() => import(/* webpackChunkName: "MenFashion" */ "../modules/MenFashion/MenFashion"));
 export const WominFashion = lazy(() => import(/* webpackChunkName: "WominFashion" */ "../modules/WomenFashion/WominFashion"));
 export const Electronics = lazy(() => import(/* webpackChunkName: "Electronics" */ "../modules/Electronics/Electronics"));
-export const LatestProduct = lazy(() => import(/* webpackChunkName: "LatestProduct" */ "../modules/LatestProducts/LatestProduct"));
+// export const LatestProduct = lazy(() => import(/* webpackChunkName: "LatestProduct" */ "../modules/LatestProducts/LatestProduct"));
 export const ProductScreen = lazy(() => import(/* webpackChunkName: "LatestProduct" */ "../modules/ProductDetail/ProductScreen"));
 export const Cart = lazy(() => import(/* webpackChunkName: "Cart" */ "../modules/Cart"));
 export const ordersDetailAndPayment = lazy(() => import(/* webpackChunkName: "Cart" */ "../modules/ordersDetailAndPayment/Order"));

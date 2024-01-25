@@ -18,7 +18,7 @@ const App = () => {
           <Route index element={<Routing.Home />} />
           <Route path='/signup' element={<Routing.SignUp />} />
           <Route path='/signin' element={<Routing.SignIn />} />
-          <Route path='/latest-product' element={<Routing.LatestProduct />} />
+          {/* <Route path='/latest-product' element={<Routing.LatestProduct />} /> */}
           <Route path='/mens-fashion' element={<Routing.MenFashion />} />
           <Route path='/womens-fashion' element={<Routing.WominFashion />} />
           <Route path='/electronics' element={<Routing.Electronics />} />
